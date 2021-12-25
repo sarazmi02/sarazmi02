@@ -1,0 +1,124 @@
+from turtle import *
+
+win = Screen()
+
+win.textinput("Evaluate", "Tap the star here")
+
+t = Turtle()
+color('black', 'red')
+bgcolor('black')
+title("nismedomar")
+
+
+def f():
+    fd(10)
+
+def b():
+    bk(10)
+
+def l():
+    left(10)
+
+def r():
+    right(10)
+
+onkeypress(f, "Up")
+onkeypress(b, "Down")
+onkeypress(r, "Right")
+onkeypress(l, "Left")
+
+h = Turtle()
+h.shape('square')
+h.goto(0,3)
+h.shapesize(7, 7, 7)
+h.color('blue', 'white')
+
+paddle_left = Turtle()
+paddle_left.speed(0)
+paddle_left.shape('square')
+paddle_left.color('red')
+paddle_left.shapesize(stretch_wid=5,stretch_len=1)
+paddle_left.penup()
+paddle_left.goto(-350,0)
+
+paddle_right = Turtle()
+paddle_right.speed(0)
+paddle_right.shape('square')
+paddle_right.shapesize(stretch_wid=5,stretch_len=1)
+paddle_right.color('red')
+paddle_right.penup()
+paddle_right.goto(350,0)
+
+pen = Turtle()
+pen.speed(0)
+pen.color('skyblue')
+pen.penup()
+pen.hideturtle()
+pen.goto(0,260)
+pen.write("Nisrine                    Med amine                    Omar ",align="center",font=('Script',24,"normal"))
+
+
+
+def paddle_left_up():
+    y = paddle_left.ycor()
+    y = y + 15
+    paddle_left.sety(y)
+
+# Moving the left paddle down
+
+def paddle_left_down():
+    y = paddle_left.ycor()
+    y = y - 15
+    paddle_left.sety(y)
+
+# Moving the left paddle down
+
+def paddle_left_right():
+    x = paddle_left.xcor()
+    x = x - 15
+    paddle_left.setx(x)
+
+def paddle_left_left():
+    x = paddle_left.xcor()
+    x = x + 15
+    paddle_left.setx(x)
+
+# Moving the left paddle down
+
+def paddle_right_up():
+    y = paddle_right.ycor()
+    y = y + 15
+    paddle_right.sety(y)
+
+# Moving right paddle down
+
+def paddle_right_right():
+    x = paddle_right.xcor()
+    x = x - 15
+    paddle_right.setx(x)
+
+def paddle_right_left():
+    x = paddle_right.xcor()
+    x = x + 15
+    paddle_right.setx(x)
+
+# Moving right paddle down
+
+def paddle_right_down():
+    y = paddle_right.ycor()
+    y = y - 15
+    paddle_right.sety(y)
+    
+win.listen()
+win.onkeypress(paddle_left_up,"z")
+win.onkeypress(paddle_left_down,"s")
+win.onkeypress(paddle_left_right,"q")
+win.onkeypress(paddle_left_left,"d")
+
+
+win.onkeypress(paddle_right_up,"c")
+win.onkeypress(paddle_right_down,"v")
+win.onkeypress(paddle_right_right,"u")
+win.onkeypress(paddle_right_left,"e")
+
+listen()
